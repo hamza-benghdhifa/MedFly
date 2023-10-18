@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="681.0" prefWidth="1031.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="edu.esprit.medfly.gui.ModMedController">
+   <children>
+      <AnchorPane prefHeight="681.0" prefWidth="1031.0">
+         <children>
+            <AnchorPane prefHeight="182.0" prefWidth="1031.0">
+               <children>
+                  <Button layoutX="33.0" layoutY="21.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="33.0" text="&lt;" />
+                  <TextField fx:id="IdField" layoutX="441.0" layoutY="76.0" prefHeight="30.0" prefWidth="149.0" />
+               </children>
+            </AnchorPane>
+            <TextField fx:id="tfmName" layoutX="206.0" layoutY="250.0" prefHeight="41.0" prefWidth="217.0" />
+            <TextField fx:id="tfmPrenom" layoutX="206.0" layoutY="366.0" prefHeight="41.0" prefWidth="217.0" />
+            <TextField fx:id="tfmSpecialite" layoutX="206.0" layoutY="490.0" prefHeight="41.0" prefWidth="217.0" />
+            <TextField fx:id="tfmPays" layoutX="703.0" layoutY="250.0" prefHeight="41.0" prefWidth="217.0" />
+            <TextField fx:id="tfmDate" layoutX="703.0" layoutY="366.0" prefHeight="41.0" prefWidth="217.0" />
+            <TextField fx:id="tfmNum" layoutX="703.0" layoutY="490.0" prefHeight="41.0" prefWidth="217.0" />
+            <Button layoutX="417.0" layoutY="578.0" mnemonicParsing="false" onAction="#Apply" prefHeight="41.0" prefWidth="197.0" text="Apply" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
