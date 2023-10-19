@@ -117,14 +117,20 @@ public  class ServicePatient implements IService<Patient> {
             if (resultSet.next()) {
                 
                 patient = new Patient(
-                    resultSet.getInt("id"),
-                    resultSet.getString("name"),
+                    resultSet.getInt("Id"),
+                    resultSet.getString("Nom"),
                     resultSet.getString("prenom"),
-                    resultSet.getDate("date_naissance"),
-                    resultSet.getInt("num_assurance"),
-                    resultSet.getString("maladie")    
+                    resultSet.getDate("DateNai"),
+                    resultSet.getInt("NumAssu"),
+                    resultSet.getString("Maladie")    
                 );
-            }
+            }/* private int id ;
+    private String name;
+    private String prenom;
+    private Date date_naissance;
+    private int num_assurance;
+    private String maladie;
+    */
             
             // Close the ResultSet and PreparedStatement
             resultSet.close();

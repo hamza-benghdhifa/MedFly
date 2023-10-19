@@ -26,7 +26,7 @@ public class FXMain extends Application {
     public void start(Stage stage) {
         try {
 
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AjoutPat.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("PatAffich.fxml")));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();

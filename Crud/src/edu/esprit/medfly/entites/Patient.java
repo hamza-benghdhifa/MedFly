@@ -40,6 +40,9 @@ public class Patient {
         this.maladie = maladie;
     }
 
+         public Patient() {
+            
+    }
     public void setName(String name) {
         this.name = name;
     }

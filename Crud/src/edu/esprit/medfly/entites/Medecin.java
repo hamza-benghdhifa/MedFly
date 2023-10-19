@@ -23,9 +23,7 @@ public class Medecin {
     private Date grad_date ;
     private int grad_num;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+   
 
   
     public Medecin() { 

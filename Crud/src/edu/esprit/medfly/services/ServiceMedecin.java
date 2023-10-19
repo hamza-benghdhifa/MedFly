@@ -133,13 +133,13 @@ public void ajouter(Medecin medecin) {
             if (resultSet.next()) {
                 
                 medecin = new Medecin(
-                    resultSet.getInt("id"),
-                    resultSet.getString("name"),
-                    resultSet.getString("prenom"),
-                    resultSet.getString("specialite"),
-                    resultSet.getString("pays"),
-                    resultSet.getDate("grad_date"),
-                    resultSet.getInt("grad_num")
+                    resultSet.getInt("Id"),
+                    resultSet.getString("Nom"),
+                    resultSet.getString("Prenom"),
+                    resultSet.getString("Specialite"),
+                    resultSet.getString("Pays"),
+                    resultSet.getDate("DateGrad"),
+                    resultSet.getInt("NumberGrad")
                 );
             }
             

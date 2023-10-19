@@ -22,8 +22,15 @@
             <TextField fx:id="tfspecialite" layoutX="161.0" layoutY="456.0" />
             <TextField fx:id="tfpays" layoutX="614.0" layoutY="255.0" />
             <TextField fx:id="tfgraddate" layoutX="614.0" layoutY="348.0" />
-            <TextField fx:id="tfgradnum" layoutX="614.0" layoutY="469.0" />
+            <TextField fx:id="tfgradnum" layoutX="614.0" layoutY="455.0" />
             <Button layoutX="394.0" layoutY="568.0" mnemonicParsing="false" onAction="#AjoutMedecin" prefHeight="52.0" prefWidth="136.0" text="Ajouter" />
+            <Label fx:id="conn1" layoutX="161.0" layoutY="293.0" prefHeight="17.0" prefWidth="171.0" />
+            <Label fx:id="conn2" layoutX="161.0" layoutY="390.0" prefHeight="17.0" prefWidth="171.0" />
+            <Label fx:id="conn3" layoutX="161.0" layoutY="494.0" prefHeight="17.0" prefWidth="171.0" />
+            <Label fx:id="conn4" layoutX="614.0" layoutY="293.0" prefHeight="17.0" prefWidth="171.0" />
+            <Label fx:id="conn5" layoutX="614.0" layoutY="390.0" prefHeight="17.0" prefWidth="171.0" />
+            <Label fx:id="conn6" layoutX="614.0" layoutY="494.0" prefHeight="17.0" prefWidth="171.0" />
+            <Label fx:id="connf" layoutX="394.0" layoutY="635.0" prefHeight="17.0" prefWidth="171.0" />
          </children>
       </AnchorPane>
    </children>

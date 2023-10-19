@@ -107,6 +107,8 @@ private void showAlert(String title, String message) {
     alert.setContentText(message);
     alert.showAndWait();
 }
+
+
     
 
     @FXML
@@ -118,6 +120,8 @@ private void showAlert(String title, String message) {
         stage.setScene(scene);
         stage.show();
     }
+    
+   
     
 
     @FXML
@@ -134,8 +138,37 @@ private void showAlert(String title, String message) {
     
     @FXML
     void search(ActionEvent event) {
+                  String idText =  tfsearch.getText();
 
+    // Check if the input is a valid integer
+    if (idText.matches("\\d+")) {
+        int id = Integer.parseInt(idText);
+
+        // Retrieve the patient with the specified ID using ServicePatient
+        ServiceMedecin servicemedecin = new ServiceMedecin();
+        Medecin medecin = servicemedecin.getOne(id);
+
+        if (medecin != null) {
+            // Clear the existing data
+            toor.getChildren().clear();
+
+            // Add the retrieved patient to the TreeTableView
+            TreeItem<Medecin> patientItem = new TreeItem<>(medecin);
+            toor.getChildren().add(patientItem);
+        } else {
+            // Display an error message if the patient is not found
+            // You can use a label for this purpose
+            // For example: errorLabel.setText("Patient not found.");
+        }
+    } else {
+        // Display an error message if the input is not a valid integer
+        // You can use a label for this purpose
+        // For example: errorLabel.setText("Invalid ID format.");
     }
+}
+    
+
+    
 
 
     @Override
@@ -166,6 +199,15 @@ private void showAlert(String title, String message) {
             TreeItem<Medecin> medecinItem = new TreeItem<>(medecin);
             toor.getChildren().add(medecinItem);
         }
+    }
+
+    @FXML
+    private void refref(ActionEvent event) {
+            // Clear the existing data
+    toor.getChildren().clear();
+
+    // Load Medecin data again
+    loadMed();
     }
     }    
     

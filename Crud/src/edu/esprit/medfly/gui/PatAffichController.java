@@ -101,9 +101,43 @@ public class PatAffichController implements Initializable {
 }
     @FXML
     void searchPat(ActionEvent event) {
+           String idText = tfsearchPat.getText();
 
+    // Check if the input is a valid integer
+    if (idText.matches("\\d+")) {
+        int id = Integer.parseInt(idText);
+
+        // Retrieve the patient with the specified ID using ServicePatient
+        ServicePatient servicePatient = new ServicePatient();
+        Patient patient = servicePatient.getOne(id);
+
+        if (patient != null) {
+            // Clear the existing data
+            toor.getChildren().clear();
+
+            // Add the retrieved patient to the TreeTableView
+            TreeItem<Patient> patientItem = new TreeItem<>(patient);
+            toor.getChildren().add(patientItem);
+        } else {
+            // Display an error message if the patient is not found
+            // You can use a label for this purpose
+            // For example: errorLabel.setText("Patient not found.");
+        }
+    } else {
+        // Display an error message if the input is not a valid integer
+        // You can use a label for this purpose
+        // For example: errorLabel.setText("Invalid ID format.");
     }
+}
+    
+    @FXML
+    void refreshTable(ActionEvent event) {
+    // Clear the existing data
+    toor.getChildren().clear();
 
+    // Load Medecin data again
+    loadMed();
+}
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -136,6 +170,8 @@ public class PatAffichController implements Initializable {
             toor.getChildren().add(medecinItem);
         }
     }
+
+    
     }    
     
 
