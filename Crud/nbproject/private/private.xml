@@ -3,13 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/gui/Signup_MedController.java</file>
             <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/entites/Medecin.java</file>
             <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/gui/FXMain.java</file>
-            <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/services/ServicePatient.java</file>
-            <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/gui/AjoutPatController.java</file>
-            <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/gui/ModPatController.java</file>
-            <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/entites/Patient.java</file>
-            <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/gui/PatAffichController.java</file>
+            <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/services/ServiceMedecin.java</file>
+            <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/gui/AdminMainMenuController.java</file>
+            <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/gui/AdminMainMenu.fxml</file>
+            <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/gui/doc.png</file>
+            <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/gui/AjoutMedController.java</file>
+            <file>file:/C:/Users/hamza/Documents/NetBeansProjects/Crud/src/edu/esprit/medfly/gui/Signup_Med.fxml</file>
         </group>
     </open-files>
 </project-private>

@@ -31,6 +31,7 @@
             <Label fx:id="conn5" layoutX="614.0" layoutY="390.0" prefHeight="17.0" prefWidth="171.0" />
             <Label fx:id="conn6" layoutX="614.0" layoutY="494.0" prefHeight="17.0" prefWidth="171.0" />
             <Label fx:id="connf" layoutX="394.0" layoutY="635.0" prefHeight="17.0" prefWidth="171.0" />
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backback" prefHeight="25.0" prefWidth="33.0" text="&lt;" />
          </children>
       </AnchorPane>
    </children>

@@ -11,8 +11,7 @@ import java.util.List;
 /**
  *
  * @author hamza
- */
-public class Medecin {
+ */public class Medecin {
 
  
     private int id;
@@ -22,6 +21,52 @@ public class Medecin {
     private String pays;
     private Date grad_date ;
     private int grad_num;
+    private String email;
+    private String mot_passe;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setMot_passe(String mot_passe) {
+        this.mot_passe = mot_passe;
+    }
+
+
+    public Medecin(String name, String prenom, String specialite, String pays, Date grad_date, int grad_num, String email, String mot_passe) {
+        this.name = name;
+        this.prenom = prenom;
+        this.specialite = specialite;
+        this.pays = pays;
+        this.grad_date = grad_date;
+        this.grad_num = grad_num;
+        this.email = email;
+        this.mot_passe = mot_passe;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getMot_passe() {
+        return mot_passe;
+    }
+
+    public Medecin(int id, String name, String prenom, String specialite, String pays, Date grad_date, int grad_num, String email, String mot_passe) {
+        this.id = id;
+        this.name = name;
+        this.prenom = prenom;
+        this.specialite = specialite;
+        this.pays = pays;
+        this.grad_date = grad_date;
+        this.grad_num = grad_num;
+        this.email = email;
+        this.mot_passe = mot_passe;
+    }
 
    
 

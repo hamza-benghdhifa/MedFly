@@ -80,13 +80,13 @@ private void AjoutPatient(ActionEvent event) {
 
     if (name.isEmpty() || prenom.isEmpty() || maladie.isEmpty() || dateStr.isEmpty() || assNumStr.isEmpty()) {
         con1.setText("Please fill in all fields.");
-        return; // Exit the method to prevent adding an empty record
+        return; 
     }
 
     // Validate the "prenom" and "name" fields for letters only
     if (!isValidName(prenom) || !isValidName(name)) {
-        labname.setText("Name and prenom should contain only letters.");
-        labpre.setText("Name and prenom should contain only letters.");
+        labname.setText("Name and familyname should contain only letters.");
+        labpre.setText("Name and familyname should contain only letters.");
         return;
     }
 
@@ -108,7 +108,7 @@ private void AjoutPatient(ActionEvent event) {
     try {
         DateNaiss = dateFormat.parse(dateStr);
     } catch (ParseException e) {
-        // Handle the parsing error, e.g., show an error message or log it
+      
     }
 
     int AssNum = Integer.parseInt(assNumStr);

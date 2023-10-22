@@ -32,7 +32,7 @@ public  class ServiceMedecin implements IService<Medecin>{
      
 public void ajouter(Medecin medecin) {
     try {
-        String req = "INSERT INTO medecin (Nom, Prenom, Specialite, Pays, DateGrad, NumberGrad) VALUES (?, ?, ?, ?, ?, ?)";
+        String req = "INSERT INTO medecin (Nom, Prenom, Specialite, Pays, DateGrad, NumberGrad,Email,MotDePasse) VALUES (?, ?, ?, ?, ?, ?,?,?)";
         PreparedStatement preparedStatement = cnx.prepareStatement(req);
         preparedStatement.setString(1, medecin.getName());
         preparedStatement.setString(2, medecin.getPrenom());
@@ -40,6 +40,10 @@ public void ajouter(Medecin medecin) {
         preparedStatement.setString(4, medecin.getPays());
         preparedStatement.setDate(5, new java.sql.Date(medecin.getGrad_date().getTime()));
         preparedStatement.setInt(6, medecin.getGrad_num());
+        preparedStatement.setString(7, medecin.getEmail());
+        preparedStatement.setString(8, medecin.getMot_passe());
+       
+        
         
         preparedStatement.executeUpdate();
         
@@ -48,7 +52,7 @@ public void ajouter(Medecin medecin) {
         System.out.println("Error adding Medecin: " + ex.getMessage());
     }
 }
-        
+     
          
 
   

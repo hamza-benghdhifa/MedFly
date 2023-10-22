@@ -82,7 +82,7 @@ public  class ServicePatient implements IService<Patient> {
                     rs.getInt("Id"),
                     rs.getString("Nom"),
                     rs.getString("Prenom"),
-                    new Date(rs.getDate("DateNai").getTime()),
+                    rs.getDate("DateNai"),
                     rs.getInt("NumAssu"),
                     rs.getString("Maladie")
                 );
