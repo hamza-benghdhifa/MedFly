@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Controller/AjoutereponserecController.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/services/PService.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Interface/reclamationview.fxml</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Controller/AjouterreclamationController.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/syrine/Pidev1.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/services/Mail.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Interface/modifierreponserec.fxml</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Controller/reponseviewController.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/services/StripeClass.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/syrine/Syrine.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/syrine/MyListener.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Interface/ajouterreponserec.fxml</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Controller/StatisticController.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/com/xemacscode/styles.css</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Interface/reponseview.fxml</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/services/TrayIconDemo.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/entity/Reponse_rec.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Interface/ajouterreclamation.fxml</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/utilities/MaConnexion.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Controller/ChartController.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/services/ReponseRecService.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Controller/ReclamationviewController.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Controller/OnereponseviewController.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/entity/Reclamation.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/services/ReclamationService.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/utilities/style.css</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Controller/ModifierReponserecController.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Interface/modifierreclamation.fxml</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Interface/statistic.fxml</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Controller/ModifierReclamationController.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Controller/OneReclamationviewController.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/services/TwilloService.java</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Interface/onereponseview.fxml</file>
+            <file>file:/C:/Users/the_old_is_back/Desktop/bal/hamma/src/edu/medfly/Interface/onereclamationview.fxml</file>
+        </group>
+    </open-files>
+</project-private>
