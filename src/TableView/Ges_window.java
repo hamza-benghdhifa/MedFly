@@ -5,6 +5,11 @@
  */
 package TableView;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,7 +49,10 @@ public class Ges_window extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DocumentException {
+        
+       
+   
         launch(args);
     }
     

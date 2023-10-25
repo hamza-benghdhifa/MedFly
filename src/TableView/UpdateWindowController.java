@@ -29,6 +29,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -114,10 +115,17 @@ String dateSr;
     private void Update(ActionEvent event) {
         String Nom_Categorie = txtMNom.getText();
         String description = txtMdescription.getText();
-        String tarification = txtMTarif.getText();
+        String texte = txtMTarif.getText();
+       
+        //String tarificationText = txtMTarif.getText(); // Récupérez le texte du TextField sous forme de chaîne
+        int tarification=0;
+        try {
+         tarification = Integer.parseInt(texte); 
+            // System.out.println("Tarification en tant qu'entier : " + tarification);
+        } catch (NumberFormatException e) { 
+            //System.err.println("La saisie n'est pas un entier valide !");
+        }
         String disponibilite = label.getText();
-        
-        
         String text = identifiant.getText(); // Récupérez le texte du TextField
         int entier = 0;
         try {
@@ -130,7 +138,24 @@ String dateSr;
          String Date_ajj =dateSr;
         gestion_service gs = new gestion_service();
         Categorie CatM = new Categorie(Nom_Categorie,tarification,description,disponibilite,Ref, Date_ajj);
-        gs.modifier(entier,CatM);
+        if (Nom_Categorie.equals("") || description.equals("")) {
+    JOptionPane.showMessageDialog(null, "Veuillez remplir toutes les champs ");
+    
+} else if(tarification<0 || tarification==0 ) {
+        JOptionPane.showMessageDialog(null, "Tarification  non valide ");
+}else if(gs.chercher(entier)==false ){
+    JOptionPane.showMessageDialog(null, "id n'existe pas ");
+}else{
+     try {
+         //tarification = Integer.parseInt(texte); 
+            gs.modifier(entier,CatM);
+                    JOptionPane.showMessageDialog(null, " Modification effectuer avec succés ");
+        //System.out.println("Categorie Ajouter!"); 
+        } catch (NumberFormatException e) { 
+            //System.err.println("La saisie n'est pas un entier valide !");
+            JOptionPane.showMessageDialog(null, "Tarification non valide ");
+        }
+        //gs.modifier(entier,CatM);
         System.out.println("Categorie Modifier!");  
     }
-}
+    }}

@@ -14,27 +14,27 @@
             <Image url="@../images/image1.jpg" />
          </image>
       </ImageView>
-      <Label accessibleRole="IMAGE_VIEW" layoutX="109.0" layoutY="14.0" lineSpacing="2.0" text="VOUS ETES LE BIENVENNUE" textFill="#c0d604">
+      <Label accessibleRole="IMAGE_VIEW" layoutX="110.0" layoutY="14.0" lineSpacing="2.0" text="VOUS ETES LE BIENVENNUE" textFill="#7f0db9">
          <font>
             <Font name="Times New Roman Bold" size="26.0" />
          </font>
       </Label>
-      <Button fx:id="aj" layoutX="33.0" layoutY="251.0" mnemonicParsing="false" onAction="#ajj" prefHeight="38.0" prefWidth="117.0" text="AJOUTER" textFill="#06abd1">
+      <Button fx:id="aj" layoutX="33.0" layoutY="251.0" mnemonicParsing="false" onAction="#ajj" prefHeight="38.0" prefWidth="117.0" style="-fx-background-color: grey;" text="AJOUTER" textFill="#06abd1">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="mo" layoutX="176.0" layoutY="251.0" mnemonicParsing="false" onAction="#mod" prefHeight="38.0" prefWidth="117.0" text="MODIFIER" textFill="#06abd1">
+      <Button fx:id="mo" layoutX="176.0" layoutY="251.0" mnemonicParsing="false" onAction="#mod" prefHeight="38.0" prefWidth="117.0" style="-fx-background-color: grey;" text="MODIFIER" textFill="#06abd1">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="su" layoutX="315.0" layoutY="251.0" mnemonicParsing="false" onAction="#sup" prefHeight="38.0" prefWidth="117.0" text="SUPPRIMER" textFill="#06abd1">
+      <Button fx:id="su" layoutX="315.0" layoutY="251.0" mnemonicParsing="false" onAction="#sup" prefHeight="38.0" prefWidth="117.0" style="-fx-background-color: grey;" text="SUPPRIMER" textFill="#06abd1">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="consult" layoutX="450.0" layoutY="251.0" mnemonicParsing="false" onAction="#consulter" prefHeight="38.0" prefWidth="117.0" text="CONSULTER" textFill="#06abd1">
+      <Button fx:id="consult" layoutX="450.0" layoutY="251.0" mnemonicParsing="false" onAction="#consulter" prefHeight="38.0" prefWidth="117.0" style="-fx-background-color: grey;" text="CONSULTER" textFill="#06abd1">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

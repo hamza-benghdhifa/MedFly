@@ -86,10 +86,6 @@ public class WindowController implements Initializable {
     @FXML
     private Button supprim;
     @FXML
-    private ColorPicker ColorPicker;
-    @FXML
-    private Button add_ref;
-    @FXML
     private Button re;
    
     @Override
@@ -126,18 +122,40 @@ public class WindowController implements Initializable {
         
         String NomCategorie = txtNom.getText();
         String Description = txtDescription.getText();
-        String Tarification = txtTarif.getText();
+        String texte = txtTarif.getText();
+         int tarification=0;
+        try {
+         tarification = Integer.parseInt(texte); 
+            
+            
+        } catch (NumberFormatException e) { 
+            //System.err.println("La saisie n'est pas un entier valide !");
+           // JOptionPane.showMessageDialog(null, "Tarification non valide ");
+        }
         String Disponibilite = MyLabel.getText();
          String ref=Ref_Services;
          String Date_aj =dateStr;
          //JOptionPane.showMessageDialog(null,NomCategorie);
         gestion_service gs = new gestion_service();
-        Categorie Cat = new Categorie(NomCategorie,Tarification,Description,Disponibilite,ref, Date_aj);
-       if (NomCategorie.equals("")) {
-    JOptionPane.showMessageDialog(null, "Veuillez entrer un nom ");
-} else {
-        gs.ajouter(Cat);
-        System.out.println("Categorie Ajouter!");  
+        Categorie Cat = new Categorie(NomCategorie,tarification,Description,Disponibilite,ref, Date_aj);
+       if (NomCategorie.equals("") || Description.equals("")) {
+    JOptionPane.showMessageDialog(null, "Veuillez remplir toutes les champs ");
+    
+} else if(tarification<0 || tarification==0  ) {
+        JOptionPane.showMessageDialog(null, "Tarification non valide ");
+}else {
+     try {
+         tarification = Integer.parseInt(texte); 
+            
+            gs.ajouter(Cat);
+                    JOptionPane.showMessageDialog(null, " Categorie Ajouter avec succés ");
+
+        //System.out.println("Categorie Ajouter!"); 
+        } catch (NumberFormatException e) { 
+            //System.err.println("La saisie n'est pas un entier valide !");
+            JOptionPane.showMessageDialog(null, "Tarification non valide ");
+        }
+         
        }
         
         myChoiceBox.getItems().add(txtNom.getText());
@@ -174,21 +192,6 @@ public class WindowController implements Initializable {
         }
     }
     
-    @FXML
-    private void changecolor(ActionEvent event) {
-        /*Color myColor = colorPicker.getValue();
-        BackgroundFill backgroundFill = new BackgroundFill(myColor, null, null);
-    Background background = new Background(backgroundFill);
-    myPane.setBackground(background);*/
-        
-  //myPane.setBackground(new Background(new BackgroundFill(myColor, null, null)));
- }
-
-    @FXML
-    private void Add_Reference(ActionEvent event) {
-    /* myChoiceBox.getItems().add(txtNom.getText());
-     txtNom.clear();*/
-    }
 
     @FXML
     private void ret(ActionEvent event) {

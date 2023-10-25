@@ -34,6 +34,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
@@ -63,6 +64,8 @@ public class AfficherController implements Initializable {
     ObservableList<Categorie> listcateg = FXCollections.observableArrayList(); 
     @FXML
     private TextField chercher;
+    @FXML
+    private Button avis;
     
 
 
@@ -85,12 +88,12 @@ public class AfficherController implements Initializable {
             while(queryOutput.next()){
                 String name=queryOutput.getString("NomCategorie");
                 String descriptions=queryOutput.getString("Description");
-                String tarification=queryOutput.getString("Tarification");
+                int tarification=queryOutput.getInt("Tarification");
                 String ref_services=queryOutput.getString("Ref_Services");
                 String disponibilite=queryOutput.getString("Disponibilite");
                 String date=queryOutput.getString("Date");
                 
-                listcateg.add(new Categorie(name,descriptions,tarification,ref_services,disponibilite,date));
+                listcateg.add(new Categorie(name,tarification,descriptions,ref_services,disponibilite,date));
                 
                 nom.setCellValueFactory(new PropertyValueFactory<>("NomCategorie"));
                 description.setCellValueFactory(new PropertyValueFactory<>("Description"));
@@ -143,6 +146,20 @@ public class AfficherController implements Initializable {
             Logger.getLogger(Ges_window.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    @FXML
+    private void aviss(ActionEvent event) {
+           try {
+        Parent parent = FXMLLoader.load(getClass().getResource("Avis_Et_Commentaire.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(Ges_window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    }
     
     
-}
+

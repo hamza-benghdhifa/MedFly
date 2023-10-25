@@ -59,7 +59,7 @@ public class DbConnect {
             ResultSet rs = ps.executeQuery();
             
             while (rs.next()){   
-                list.add(new Categorie(rs.getString("NomCategorie"), rs.getString("Description"), rs.getString("Tarification"),rs.getString("Ref_Services"), rs.getString("Disponibilite"), rs.getString("Date")));               
+                list.add(new Categorie(rs.getString("NomCategorie"), rs.getInt("Tarification"), rs.getString("Description"),rs.getString("Ref_Services"), rs.getString("Disponibilite"), rs.getString("Date")));               
             }
         } catch (SQLException ex ) {
         }

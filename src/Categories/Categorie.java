@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Categorie {
     int id;
     String NomCategorie;
-    String Tarification;
+    int Tarification;
     String Description;
     String Disponibilite;
     String Ref_Services;
@@ -24,7 +24,7 @@ public class Categorie {
 
     public Categorie() {
     }
-    public Categorie(String NomCategorie, String Tarification, String Description, String Disponibilite, String Ref_Services, String date) {
+    public Categorie(String NomCategorie, int Tarification, String Description, String Disponibilite, String Ref_Services, String date) {
         this.NomCategorie = NomCategorie;
         this.Tarification = Tarification;
         this.Description = Description;
@@ -33,7 +33,7 @@ public class Categorie {
         this.date = date;
     }
 
-    public Categorie(int id, String NomCategorie, String Tarification, String Description, String Disponibilite, String Ref_Services, String date) {
+    public Categorie(int id, String NomCategorie, int Tarification, String Description, String Disponibilite, String Ref_Services, String date) {
         this.id = id;
         this.NomCategorie = NomCategorie;
         this.Tarification = Tarification;
@@ -51,6 +51,8 @@ public class Categorie {
         this.Ref_Services = Ref_Services;
         this.date = date;
     }*/
+
+   
 
    
 
@@ -74,11 +76,11 @@ public class Categorie {
         this.NomCategorie = NomCategorie;
     }
 
-    public String getTarification() {
+    public int getTarification() {
         return Tarification;
     }
 
-    public void setTarification(String Tarification) {
+    public void setTarification(int Tarification) {
         this.Tarification = Tarification;
     }
 
