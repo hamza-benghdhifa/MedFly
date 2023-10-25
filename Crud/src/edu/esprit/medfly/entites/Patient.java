@@ -18,6 +18,35 @@ public class Patient {
     private Date date_naissance;
     private int num_assurance;
     private String maladie;
+    private String email;;
+    private String password;
+
+    public Patient(String name, String prenom, Date date_naissance, int num_assurance, String maladie, String email, String password) {
+        this.name = name;
+        this.prenom = prenom;
+        this.date_naissance = date_naissance;
+        this.num_assurance = num_assurance;
+        this.maladie = maladie;
+        this.email = email;
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+            
     
     
 

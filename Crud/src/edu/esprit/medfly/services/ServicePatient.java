@@ -22,7 +22,7 @@ public  class ServicePatient implements IService<Patient> {
     @Override
     public void ajouter(Patient patient) {
         try {
-            String req = "INSERT INTO patient ( Nom, Prenom, DateNai, NumAssu, Maladie) VALUES ( ?, ?, ?, ?, ?)";
+            String req = "INSERT INTO patient ( Nom, Prenom, DateNai, NumAssu, Maladie,EmailP,Password) VALUES ( ?, ?, ?, ?, ?,?,?)";
 
             PreparedStatement preparedStatement = cnx.prepareStatement(req);
             preparedStatement.setString(1, patient.getName());
@@ -30,6 +30,8 @@ public  class ServicePatient implements IService<Patient> {
             preparedStatement.setDate(3, new java.sql.Date(patient.getDate_naissance().getTime()));
             preparedStatement.setInt(4, patient.getNum_assurance());
             preparedStatement.setString(5, patient.getMaladie());
+            preparedStatement.setString(6, patient.getEmail());
+            preparedStatement.setString(7, patient.getPassword());
 
             preparedStatement.executeUpdate();
         } catch (SQLException var4) {
