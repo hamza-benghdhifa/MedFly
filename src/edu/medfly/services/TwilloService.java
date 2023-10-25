@@ -4,7 +4,7 @@ import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
 public class TwilloService {
     private static final String ACCOUNT_SID = "ACcfe7b37fc27fa99c4eb5e0d7e351df2d";
-    private static final String AUTH_TOKEN = "c83c8965ae970a3428541b51aa2cb010";
+    private static final String AUTH_TOKEN = "ea0d7d241f40649948146c9b213d94eb";
     private static final String FROM_NUMBER = "+12314651476";
 
     public static void sendSms(String toNumber, String messageText) {

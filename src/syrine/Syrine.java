@@ -18,13 +18,13 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author THEOLDISBACK
+ * @author syrine 
  */
 public class Syrine extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-           Parent root = FXMLLoader.load(getClass().getResource("/edu/medfly/Interface/reclamationview.fxml"));
+           Parent root = FXMLLoader.load(getClass().getResource("/edu/medfly/Interface/ajouterreclamation.fxml"));
         primaryStage.setTitle("campyy");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
