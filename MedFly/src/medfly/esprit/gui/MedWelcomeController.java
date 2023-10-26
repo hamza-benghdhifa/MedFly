@@ -39,6 +39,7 @@ public class MedWelcomeController implements Initializable {
     }
     @FXML
     private Button gotoenvinv;
+    
 
     @FXML
     private Button gotoconsinv;
@@ -67,6 +68,7 @@ public class MedWelcomeController implements Initializable {
         // Handle exceptions, e.g., show an error message to the user
     }
     }
+    
 
     @FXML
     void gotoconsmes(ActionEvent event) {

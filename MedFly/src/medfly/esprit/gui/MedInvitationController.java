@@ -77,7 +77,7 @@ public class MedInvitationController implements Initializable {
     // Get user input from the JavaFX interface fields
     try {
     String EmailDestinataireinv = AfficheEmailinv.getText();
-    String Emailinv = "anis@esprit.com"; // Use the locally declared email
+    String Emailinv = "lamis@esprit.com"; // Use the locally declared email
     String Status = "pending"; // Set Status to "pending"
 
     // Create a new invitation object with the input data

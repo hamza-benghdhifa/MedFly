@@ -29,6 +29,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.controlsfx.control.Notifications;
 
 /**
  *
@@ -79,17 +80,32 @@ public class MedInvTableController implements Initializable {
         // Update the "Status" in the database
         serviceInvitations service = new serviceInvitations();
         service.updateInvitationStatus(selectedInvitation.getIdinvi(), "accepted");
-
+        
+        sendNotificationToInviter(selectedInvitation.getEmailinv());
         // Refresh the TableView (optional)
         TableInv.refresh();
 
         // Optionally, you can display a confirmation message to the user
         System.out.println("Invitation status updated to 'accepted'.");
+
     } else {
         // Handle the case where no invitation is selected
         System.out.println("No invitation selected.");
     }
     }
+    void sendNotificationToInviter(String inviterEmail) {
+    if ("lamis@esprit.com".equals(inviterEmail)) {
+        Notifications.create()
+                .title("Invitation Accepted")
+                .text("Your invitation has been accepted.")
+                .showInformation();
+    }
+}
+
+
+
+
+
 
     @FXML
     void Accueilinv(ActionEvent event) {
