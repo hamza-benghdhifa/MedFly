@@ -78,7 +78,7 @@ public class Avis_Et_CommentaireController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    
+   // String top =mail.getText();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -116,7 +116,7 @@ public class Avis_Et_CommentaireController implements Initializable {
          
     }
     public boolean isCommentInappropriate(String comment) {
-    String[] inappropriateWords = {"putain", "fuck", "merde","pute","degueulasse"}; 
+    String[] inappropriateWords = {"mot1","mot2","mot3"}; 
 
     for (String word : inappropriateWords) {
         if (comment.toLowerCase().contains(word.toLowerCase())) {
@@ -128,7 +128,7 @@ public class Avis_Et_CommentaireController implements Initializable {
 
 
     @FXML
-    private void commenter(ActionEvent event) throws AddressException {
+    private void commenter(ActionEvent event) throws AddressException, MessagingException, Exception {
         String NomService = nom_Services;
         String Comment = txtcomment.getText();
         String texte = txt_id.getText();
@@ -146,12 +146,14 @@ public class Avis_Et_CommentaireController implements Initializable {
          Avis_Et_Comment Com = new Avis_Et_Comment(nom_Services,id,etoile,Comment,Date_av);
          if(isCommentInappropriate(Comment) ==true){
            JOptionPane.showMessageDialog(null, "votre commentaire contient des mot inappropriés");
-           toamir se=new toamir();
-           //String top =mail.getText();
-           se.tomir();
+          // toamir se=new toamir();
            
- /*EnvoyerEmail test=new EnvoyerEmail();
-         test.envoyer();*/
+           //se.tomir();
+           
+           
+ SendEmail test=new SendEmail();
+        /* test.sendMail(email);*/
+ test.send(email);
          }else{
        // Avis_Et_Comment Com = new Avis_Et_Comment(nom_Services,id,etoile,Comment,Date_av);
          ga.ajouter(Com);

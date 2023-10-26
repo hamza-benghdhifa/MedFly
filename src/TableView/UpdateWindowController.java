@@ -53,7 +53,7 @@ public class UpdateWindowController implements Initializable {
     @FXML
     private RadioButton Butt_Indisponible;
 
-        private String[] References= {"","Chirurgie","Soins de santé mentale","Services de Soins Palliatifs","Services de Santé Dentaire","Services de Soins Optométriques et Ophtalmologiques"};
+        private String[] References= {"","Soins de santé mentale"," Soins cardiovasculaires","Soins en pédiatrie","Soins en oncologie","Soins de réadaptation","Soins Dentaires Généraux","Soins Esthétiques Dentaires","Soins en Chirurgie Buccale","Soins de Chirurgie Esthétique Buccale"};
     @FXML
     private TextField txtMNom;
     @FXML

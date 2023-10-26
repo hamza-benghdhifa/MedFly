@@ -69,7 +69,7 @@ public class WindowController implements Initializable {
     @FXML
     private ComboBox<String> myChoiceBox;
     
-    private String[] References= {"","Chirurgie","Soins de santé mentale","Services de Soins Palliatifs","Services de Santé Dentaire","Services de Soins Optométriques et Ophtalmologiques"};
+    private String[] References= {"","Soins de santé mentale"," Soins cardiovasculaires","Soins en pédiatrie","Soins en oncologie","Soins de réadaptation","Soins Dentaires Généraux","Soins Esthétiques Dentaires","Soins en Chirurgie Buccale","Soins de Chirurgie Esthétique Buccale"};
     @FXML
     private Label date_label;
     private DatePicker MyDate;
@@ -87,6 +87,8 @@ public class WindowController implements Initializable {
     private Button supprim;
     @FXML
     private Button re;
+    @FXML
+    private Button vid;
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -197,6 +199,19 @@ public class WindowController implements Initializable {
     private void ret(ActionEvent event) {
          try {
         Parent parent = FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(Ges_window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void video(ActionEvent event) {
+          try {
+        Parent parent = FXMLLoader.load(getClass().getResource("MediaPlayer.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(parent);
         stage.setScene(scene);

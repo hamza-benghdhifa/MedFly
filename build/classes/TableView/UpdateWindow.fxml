@@ -48,7 +48,7 @@
             <Font name="System Bold" size="20.0" />
          </font></Label>
       <TextField fx:id="identifiant" layoutX="314.0" layoutY="60.0" promptText="Entrer un id" />
-      <Label layoutX="152.0" layoutY="127.0" text="NomCategorie:" textFill="WHITE">
+      <Label layoutX="152.0" layoutY="127.0" text="Nom_Service:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

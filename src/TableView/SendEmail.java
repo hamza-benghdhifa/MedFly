@@ -30,27 +30,27 @@ public class SendEmail {
         try {
             //String host="smtp.googlemail.com";
             String host="smtp.gmail.com";
-            String user = "hjiriamir2020@gmail.com";
-            String pass = "amir1998*";
-            String from ="hjiriamir2020@gmail.com";
-            String subject ="our subject";
-            String messag ="our message";
+            String user = "amir.hjiri@esprit.tn";
+            String pass = "224JMT4975";
+            String from ="amir.hjiri@esprit.tn";
+            String subject ="Commentaire inaproprié";
+            String messag ="votre compte est bloquer à cause de vous mentionnez un message  qui contients des mots inapropriés ";
             
             boolean sessionDebug=false;
             Properties props = new Properties();
             props.put("mail.smtp.auth", "true");
             props.put("mail.smtp.starttls.enable","true");
-            props.put("mail.smtp.ssl.protocols", "TLSv1.2"); 
-            props.put("mail.smtp.ssl.ciphersuites", "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"); 
+           // props.put("mail.smtp.ssl.protocols", "TLSv1.2"); 
+           // props.put("mail.smtp.ssl.ciphersuites", "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"); 
             props.put("mail.smtp.stocketFactory.port","587");
-            props.put("mail.smtp.stocketFactory.class","javax.net.ssl.SSLSocketFactory");
+           // props.put("mail.smtp.stocketFactory.class","javax.net.ssl.SSLSocketFactory");
             props.put("mail.smtp.port","587");
             props.put("mail.smtp.host","smtp.gmail.com");
            // props.put("mail.smtp.port","587");
-            props.put("mail.smtp.starttls.required","true");
+            //props.put("mail.smtp.starttls.required","true");
             //props.put("mail.smtp.ssl.enable","true");
 
-            java.security.Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
+           // java.security.Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
             Session mailsession=Session.getDefaultInstance(props, null);
             
             

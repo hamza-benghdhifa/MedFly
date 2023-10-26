@@ -28,14 +28,33 @@ public class gestion_service implements service_management <Categorie> {
 }
     @Override
     public void ajouter(Categorie c) {
-try {
+/*try {
             String req = "INSERT INTO `gestion_categories` ( `NomCategorie`, `Description`, `Tarification`, `Ref_Services`, `Disponibilite`, `Date`) VALUES ('" +c.getNomCategorie() + "','" + c.getDescription()+ "','"+c.getTarification()+ "','" + c.getRef_Services() + "','" + c.getDisponibilite() + "','" + c.getDate()+ "')";
             
             Statement stm = cnx.createStatement();  
             stm.executeUpdate(req);
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-        }    }
+        }   */ 
+    
+    try {
+        String req = "INSERT INTO gestion_categories (NomCategorie, Description, Tarification, Ref_Services, Disponibilite, Date) VALUES (?, ?, ?, ?, ?, ?)";
+        
+        PreparedStatement pstmt = cnx.prepareStatement(req);
+        pstmt.setString(1, c.getNomCategorie());
+        pstmt.setString(2, c.getDescription());
+        pstmt.setInt(3, c.getTarification());
+        pstmt.setString(4, c.getRef_Services());
+        pstmt.setString(5, c.getDisponibilite());
+        pstmt.setString(6,   c.getDate());
+        
+        pstmt.executeUpdate();
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+}
+
+    
     
    
 

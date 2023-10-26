@@ -35,6 +35,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
@@ -60,14 +61,17 @@ public class AfficherController implements Initializable {
     private TableColumn<Categorie, String> mirdate;
     @FXML
     private TableView<Categorie> tablee;
-    
+    String VideoSelectionner;
     ObservableList<Categorie> listcateg = FXCollections.observableArrayList(); 
     @FXML
     private TextField chercher;
     @FXML
     private Button avis;
+    @FXML
+    private Button ouvrer;
+    private ComboBox<String> vid;
     
-
+ private String[] Reference= {"","Soins de santé mentale"," Soins cardiovasculaires","Soins en pédiatrie","Soins en oncologie","Soins de réadaptation","Soins Dentaires Généraux","Soins Esthétiques Dentaires","Soins en Chirurgie Buccale","Soins de Chirurgie Esthétique Buccale"};
 
 
     /**
@@ -129,7 +133,7 @@ public class AfficherController implements Initializable {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        
+       //vid.getItems().addAll(Reference); 
     }    
  private Stage stage;
     private Scene scene;
@@ -158,6 +162,24 @@ public class AfficherController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(Ges_window.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void ouvrir(ActionEvent event) {
+             try {
+        Parent parent = FXMLLoader.load(getClass().getResource("MediaPlayer.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(Ges_window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    }
+
+    private void sequences(ActionEvent event) {
+        VideoSelectionner=vid.getSelectionModel().getSelectedItem().toString();
     }
     }
     
