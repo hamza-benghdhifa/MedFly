@@ -7,6 +7,7 @@ package tn.edu.esprit.gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -25,8 +26,10 @@ import javafx.scene.control.TreeTableRow;
 import javafx.scene.control.TreeTableView;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.stage.Stage;
+import tn.edu.esprit.entities.Facture;
 import tn.edu.esprit.entities.UserVol;
 import tn.edu.esprit.entities.Vols;
+import tn.edu.esprit.services.ServiceFacture;
 import tn.edu.esprit.services.ServiceVols;
 import tn.edu.esprit.services.ServiveReservation;
 
@@ -49,8 +52,6 @@ public class UserVolController implements Initializable {
     private TreeTableColumn<?, ?> coldepart;
     @FXML
     private TreeTableColumn<?, ?> colDestination;
-    @FXML
-    private TextField txtPaysRecherche;
     @FXML
     private TextField nomcompagnie;
     @FXML
@@ -82,55 +83,67 @@ public class UserVolController implements Initializable {
     private Label labelBilletaReserver;
     @FXML
     private Label labelREmplissage;
+    @FXML
+    private TextField txtRecherche;
+    @FXML
+    private Label factureTot;
 
 
     /**
      * Initializes the controller class.
      */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {  // Associate TableColumn with Medecin properties
+   @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // Associer les colonnes du tableau aux propriétés de l'entité Vols
         colCompagnie.setCellValueFactory(new TreeItemPropertyValueFactory<>("nom_airways"));
         colNombre.setCellValueFactory(new TreeItemPropertyValueFactory<>("nb_billet"));
         colPrix.setCellValueFactory(new TreeItemPropertyValueFactory<>("prix_billet"));
         coldepart.setCellValueFactory(new TreeItemPropertyValueFactory<>("date_depart"));
         colDestination.setCellValueFactory(new TreeItemPropertyValueFactory<>("destination"));
-        
 
-        // Set the root node for the TreeTableView
-                treeview.setRoot(toor);
+        // Définir le nœud racine pour le TreeTableView
+        treeview.setRoot(toor);
 
-        // Load vol data
+        // Charger les données des vols
         loadVol();
-        
+
+        // Gérer les clics sur les lignes du tableau
         treeview.setRowFactory(tv -> {
-    TreeTableRow<Vols> row = new TreeTableRow<>();
-    row.setOnMouseClicked(event -> {
-        if (event.getClickCount() == 2 && (!row.isEmpty())) {
-            Vols vol = row.getItem();
-            if (vol != null) {
-                // Remplissez les champs de texte avec les données du vol
-                nomcompagnie.setText(vol.getNom_airways());
-                txtNombreBilletDispo.setText(String.valueOf(vol.getNb_billet()));
-                txtPrixbillet.setText(String.valueOf(vol.getPrix_billet()));
-                txtDepart.setText(vol.getDate_depart());
-                txtDestinaton.setText(vol.getDestination());
-            }
-        }
-    });
-    return row;
-});
+            TreeTableRow<Vols> row = new TreeTableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty())) {
+                    Vols vol = row.getItem();
+                    if (vol != null) {
+                        // Remplir les champs de texte avec les données du vol
+                        nomcompagnie.setText(vol.getNom_airways());
+                        txtNombreBilletDispo.setText(String.valueOf(vol.getNb_billet()));
+                        txtPrixbillet.setText(String.valueOf(vol.getPrix_billet()));
+                        txtDepart.setText(vol.getDate_depart());
+                        txtDestinaton.setText(vol.getDestination());
+                    }
+                }
+            });
+            return row;
+        });
+
+        // Mettre en place la recherche avancée en écoutant les modifications du champ de recherche
+        txtRecherche.textProperty().addListener((observable, oldValue, newValue) -> {
+            // Appeler la méthode RechercheAvance lorsque le texte change
+            RechercheAvance(null);
+        });
     }
-      private void loadVol() {
-        // Fetch vol data from your ServiceMedecin
+
+    private void loadVol() {
+        // Charger les données des vols depuis le service ServiceVols
         ServiceVols service = new ServiceVols();
         List<Vols> VolData = service.getAll();
 
-        // Create TreeItems for each Medecin and add them to the root
-        for (Vols vol: VolData) {
-            TreeItem<Vols> medecinItem = new TreeItem<>(vol);
-            toor.getChildren().add(medecinItem);
+        // Créer des éléments TreeItem pour chaque vol et les ajouter au nœud racine
+        for (Vols vol : VolData) {
+            TreeItem<Vols> volItem = new TreeItem<>(vol);
+            toor.getChildren().add(volItem);
         }
-    }    
+    }
 
     @FXML
     private void ReserverVol(ActionEvent event) {
@@ -192,6 +205,10 @@ public class UserVolController implements Initializable {
 
         // Vous pouvez obtenir le contrôleur de la nouvelle fenêtre si nécessaire
         UserHotelController userHotelController = loader.getController();
+        
+        Facture factureVol = new Facture(passport, nomUser, prenomUser, txtDestinaton.getText(), "gammarth", compagnie, facture);
+        ServiceFacture serviceFacture = new ServiceFacture();
+        serviceFacture.ajouter(factureVol);
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
@@ -211,12 +228,34 @@ public class UserVolController implements Initializable {
 
 
 
-    @FXML
-    private void QuitterVol(ActionEvent event) {
-    }
 
-    @FXML
-    private void RecherchePays(ActionEvent event) {
+@FXML
+private void RechercheAvance(ActionEvent event) {
+ // Récupérez le texte saisi dans le champ txtRecherche
+    String recherche = txtRecherche.getText().trim();
+
+    // Assurez-vous que la recherche n'est pas vide
+    if (!recherche.isEmpty()) {
+        // Utilisez la nouvelle méthode de recherche par destination
+        ServiceVols serviceVols = new ServiceVols();
+        ArrayList<Vols> result = serviceVols.Advancedsearch(recherche, null, null);
+
+        // Effacez le contenu actuel du TreeTableView
+        toor.getChildren().clear();
+
+        // Ajoutez les résultats de la recherche à la TreeTableView
+        for (Vols vol : result) {
+            TreeItem<Vols> volItem = new TreeItem<>(vol);
+            toor.getChildren().add(volItem);
+        }
+    } else {
+        // Si le champ de recherche est vide, rechargez tous les vols
+        loadVol();
     }
+}
+
+
+
+
     
 }

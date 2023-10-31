@@ -6,9 +6,9 @@
 <?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="519.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.edu.esprit.gui.GestionHotelsController">
+<AnchorPane id="AnchorPane" prefHeight="711.0" prefWidth="1031.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.edu.esprit.gui.GestionHotelsController">
    <children>
-      <TreeTableView fx:id="hotelTree" layoutX="118.0" layoutY="101.0" prefHeight="233.0" prefWidth="452.0">
+      <TreeTableView fx:id="hotelTree" layoutX="260.0" layoutY="305.0" prefHeight="233.0" prefWidth="452.0">
         <columns>
           <TreeTableColumn fx:id="clId" prefWidth="43.0" text="Id " />
           <TreeTableColumn fx:id="clNom" prefWidth="107.0" text="Nom" />
@@ -18,12 +18,14 @@
             <TreeTableColumn fx:id="clPrix" prefWidth="75.0" text="prix nuit" />
         </columns>
       </TreeTableView>
-      <Button layoutX="344.0" layoutY="45.0" mnemonicParsing="false" onAction="#RechercheHotel" text="Rechercher" />
-      <Button layoutX="459.0" layoutY="45.0" mnemonicParsing="false" onAction="#SupprimerHotel" text="Supprimer" />
-      <Button layoutX="391.0" layoutY="374.0" mnemonicParsing="false" onAction="#toModifier" text="Modifier" />
-      <Button layoutX="206.0" layoutY="374.0" mnemonicParsing="false" onAction="#toAjouter" text="Ajouter" />
-      <TextField fx:id="txtid" layoutX="147.0" layoutY="45.0" promptText="Identifiant" />
-      <Button layoutX="21.0" layoutY="202.0" mnemonicParsing="false" onAction="#rafraîchir" text="rafraîchir" />
-      <Button mnemonicParsing="false" onAction="#Homehotel" text="Home" />
+      <Button layoutX="856.0" layoutY="372.0" mnemonicParsing="false" onAction="#RechercheHotel" text="Rechercher" />
+      <Button layoutX="442.0" layoutY="580.0" mnemonicParsing="false" onAction="#SupprimerHotel" text="Supprimer" />
+      <Button layoutX="612.0" layoutY="580.0" mnemonicParsing="false" onAction="#toModifier" text="Modifier" />
+      <Button layoutX="275.0" layoutY="580.0" mnemonicParsing="false" onAction="#toAjouter" text="Ajouter" />
+      <TextField fx:id="txtid" layoutX="762.0" layoutY="372.0" prefHeight="31.0" prefWidth="94.0" promptText="Identifiant" />
+      <Button layoutX="611.0" layoutY="253.0" mnemonicParsing="false" onAction="#rafraîchir" text="rafraîchir" />
+      <Button layoutX="20.0" layoutY="215.0" mnemonicParsing="false" onAction="#Homehotel" text="Home" />
+      <Button layoutX="286.0" layoutY="253.0" mnemonicParsing="false" onAction="#imprimerHotel" text="Imprimer" />
+      <AnchorPane prefHeight="200.0" prefWidth="1031.0" style="-fx-background-color: #99CDD8;" />
    </children>
 </AnchorPane>

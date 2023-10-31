@@ -17,6 +17,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -220,6 +221,21 @@ public class GestionHotelsController implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+     @FXML
+    void imprimerHotel(ActionEvent event) {
+         PrinterJob printerJob = PrinterJob.createPrinterJob();
+
+            if (printerJob != null && printerJob.showPrintDialog(hotelTree.getScene().getWindow())) {
+                boolean success = printerJob.printPage(hotelTree);
+                if (success) {
+                    printerJob.endJob();
+                    System.out.println("Printing completed successfully.");
+                } else {
+                    System.out.println("Printing failed.");
+                }
+            }
+
     }
 
 }

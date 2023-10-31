@@ -150,4 +150,65 @@ public class ServiceHotels implements IService<Hotels> {
         System.out.println(ex.getMessage());
     }
     return hotels;
-}    }
+}
+
+   @Override
+public ArrayList<Hotels> Advancedsearch(String nom_hotel, String etoile, String pays) {
+    String req = "SELECT * FROM hotels WHERE 1=1";
+
+    if (nom_hotel != null && !nom_hotel.isEmpty()) {
+        req += " AND nom_hotel LIKE ?";
+    }
+
+    if (etoile != null && !etoile.isEmpty()) {
+        req += " AND nb_etoile = ?";
+    }
+
+    if (pays != null && !pays.isEmpty()) {
+        req += " AND pays LIKE ?";
+    }
+
+    ArrayList<Hotels> hotels = new ArrayList<>();
+    try {
+        PreparedStatement preparedStatement = cnx.prepareStatement(req);
+
+        int paramCount = 1;
+
+        if (nom_hotel != null && !nom_hotel.isEmpty()) {
+            preparedStatement.setString(paramCount, "%" + nom_hotel + "%");
+            paramCount++;
+        }
+
+        if (etoile != null && !etoile.isEmpty()) {
+            preparedStatement.setString(paramCount, etoile);
+            paramCount++;
+        }
+
+        if (pays != null && !pays.isEmpty()) {
+            preparedStatement.setString(paramCount, "%" + pays + "%");
+        }
+
+        ResultSet rs = preparedStatement.executeQuery();
+
+        while (rs.next()) {
+            Hotels h = new Hotels();
+            h.setId_hotel(rs.getInt("id_hotel"));
+            h.setNom_hotel(rs.getString("nom_hotel"));
+            h.setEtoile(rs.getString("nb_etoile"));
+            h.setPays(rs.getString("pays"));
+            h.setNbre_chambre(rs.getInt("nb_chambre"));
+            h.setPrix_nuit(rs.getFloat("prix_nuit"));
+            hotels.add(h);
+        }
+
+        rs.close();
+        preparedStatement.close();
+    } catch (SQLException ex) {
+        System.out.println("Erreur lors de la recherche avancée : " + ex.getMessage());
+    }
+
+    return hotels;
+}
+
+
+ }

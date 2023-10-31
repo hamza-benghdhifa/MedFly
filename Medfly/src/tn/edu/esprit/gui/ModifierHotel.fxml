@@ -5,26 +5,22 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.edu.esprit.gui.ModifierHotelController">
+<AnchorPane id="AnchorPane" prefHeight="711.0" prefWidth="1031.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.edu.esprit.gui.ModifierHotelController">
    <children>
-      <AnchorPane id="AnchorPane" layoutX="31.0" layoutY="14.0" prefHeight="420.0" prefWidth="667.0">
-         <children>
-            <TextField fx:id="txtNom1" layoutX="196.0" layoutY="31.0" />
-            <TextField fx:id="txtPrix1" layoutX="196.0" layoutY="241.0" />
-            <TextField fx:id="txtChambre1" layoutX="255.0" layoutY="192.0" />
-            <TextField fx:id="txtPays1" layoutX="196.0" layoutY="143.0" />
-            <TextField fx:id="txtEtoile1" layoutX="196.0" layoutY="89.0" />
-            <Label layoutX="60.0" layoutY="246.0" text="prix d'une nuit :" />
-            <Label layoutX="17.0" layoutY="197.0" text="nombre de chambre disponibles : " />
-            <Label layoutX="111.0" layoutY="148.0" text="Pays :" />
-            <Label layoutX="51.0" layoutY="94.0" text="nombre d 'etoile : " />
-            <Label layoutX="72.0" layoutY="36.0" text="Nom d'hotel : " />
-            <Button layoutX="243.0" layoutY="306.0" mnemonicParsing="false" onAction="#ModifierHotel" text="Modifier" />
-            <TextField fx:id="txtid1" layoutX="579.0" layoutY="16.0" prefHeight="31.0" prefWidth="54.0" />
-            <Label layoutX="428.0" layoutY="21.0" text="id de l hotel a modifier" />
-            <Button layoutX="547.0" layoutY="62.0" mnemonicParsing="false" onAction="#Remplissage" text="search" />
-         </children>
-      </AnchorPane>
-      <Button layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" onAction="#RetourModifier" text="Retour" />
+      <AnchorPane id="AnchorPane" prefHeight="711.0" prefWidth="429.0" style="-fx-background-color: #99CDD8;" />
+      <Button layoutX="671.0" layoutY="565.0" mnemonicParsing="false" onAction="#RetourModifier" text="Retour" />
+      <Button layoutX="813.0" layoutY="565.0" mnemonicParsing="false" onAction="#ModifierHotel" text="Modifier" />
+      <TextField fx:id="txtPrix1" layoutX="684.0" layoutY="460.0" prefHeight="31.0" prefWidth="237.0" />
+      <Label layoutX="559.0" layoutY="465.0" text="prix d'une nuit :" />
+      <TextField fx:id="txtid1" editable="false" layoutX="619.0" layoutY="36.0" prefHeight="31.0" prefWidth="54.0" />
+      <Label layoutX="461.0" layoutY="41.0" text="id de l hotel a modifier" />
+      <TextField fx:id="txtNom1" layoutX="674.0" layoutY="160.0" prefHeight="31.0" prefWidth="226.0" />
+      <Label layoutX="572.0" layoutY="165.0" text="Nom d'hotel : " />
+      <TextField fx:id="txtEtoile1" layoutX="678.0" layoutY="236.0" />
+      <Label layoutX="536.0" layoutY="241.0" text="nombre d 'etoile : " />
+      <TextField fx:id="txtPays1" layoutX="678.0" layoutY="309.0" prefHeight="31.0" prefWidth="212.0" />
+      <Label layoutX="619.0" layoutY="314.0" text="Pays :" />
+      <TextField fx:id="txtChambre1" layoutX="736.0" layoutY="385.0" prefHeight="31.0" prefWidth="206.0" />
+      <Label layoutX="497.0" layoutY="390.0" text="nombre de chambre disponibles : " />
    </children>
 </AnchorPane>

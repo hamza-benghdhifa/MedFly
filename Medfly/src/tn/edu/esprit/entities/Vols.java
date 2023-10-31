@@ -14,10 +14,6 @@ import java.util.Objects;
 public class Vols {
      private String date_depart;
      private String destination;
-
-    public void setId_vol(int id_vol) {
-        this.id_vol = id_vol;
-    }
      private float prix_billet;
      private int nb_billet;
      private int id_vol;
@@ -81,7 +77,9 @@ public class Vols {
         this.prix_billet = prix_billet;
     }
 
-    
+     public void setId_vol(int id_vol) {
+        this.id_vol = id_vol;
+    }
     public void setNb_billet(int nb_billet) {
         this.nb_billet = nb_billet;
     }

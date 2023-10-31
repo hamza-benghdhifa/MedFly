@@ -30,8 +30,8 @@ public class MainFx extends Application {
     public void start(Stage primaryStage) {
          
         try {
-             Parent root =FXMLLoader.load(getClass().getResource("UserHotel.fxml"));
-             Scene scene = new Scene(root, 700,500);
+             Parent root =FXMLLoader.load(getClass().getResource("UserVol.fxml"));
+             Scene scene = new Scene(root, 1031,711);
              primaryStage.setTitle("Ajouter vol!");
              primaryStage.setScene(scene);
              primaryStage.show();

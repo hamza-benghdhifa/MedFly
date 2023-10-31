@@ -149,6 +149,63 @@ public void supprimer(int id) {
     }
     return vols;
 }
+
+     
+ @Override
+public ArrayList<Vols> Advancedsearch(String destination, String nomAirways, String dateDepart) {
+    String req = "SELECT * FROM vols WHERE 1=1";
+
+    if (destination != null && !destination.isEmpty()) {
+        req += " AND destination LIKE ?";
+    }
+
+    if (nomAirways != null && !nomAirways.isEmpty()) {
+        req += " AND nom_airways LIKE ?";
+    }
+
+    if (dateDepart != null && !dateDepart.isEmpty()) {
+        req += " AND date_depart LIKE ?";
+    }
+
+    ArrayList<Vols> vols = new ArrayList<>();
+    try {
+        PreparedStatement preparedStatement = cnx.prepareStatement(req);
+
+        if (destination != null && !destination.isEmpty()) {
+            preparedStatement.setString(1, "%" + destination + "%");
+        }
+
+        if (nomAirways != null && !nomAirways.isEmpty()) {
+            int index = (destination != null && !destination.isEmpty()) ? 2 : 1;
+            preparedStatement.setString(index, "%" + nomAirways + "%");
+        }
+
+        if (dateDepart != null && !dateDepart.isEmpty()) {
+            int index = (destination != null && !destination.isEmpty() && nomAirways != null && !nomAirways.isEmpty()) ? 3 : 2;
+            preparedStatement.setString(index, "%" + dateDepart + "%");
+        }
+
+        ResultSet rs = preparedStatement.executeQuery();
+
+        while (rs.next()) {
+            Vols v = new Vols();
+            v.setId_vol(rs.getInt("id_vol"));
+            v.setNom_airways(rs.getString("nom_airways"));
+            v.setNb_billet(rs.getInt("nb_billet"));
+            v.setPrix_billet(rs.getFloat("prix_billet"));
+            v.setDate_depart(rs.getString("date_depart"));
+            v.setDestination(rs.getString("destination"));
+            vols.add(v);
+        }
+
+        rs.close();
+        preparedStatement.close();
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
+    return vols;
+}
+
 }
 
    

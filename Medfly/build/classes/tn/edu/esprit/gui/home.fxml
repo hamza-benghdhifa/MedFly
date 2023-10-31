@@ -5,16 +5,16 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.edu.esprit.gui.HomeController">
+<AnchorPane id="AnchorPane" prefHeight="711.0" prefWidth="1031.0" style="-fx-background-color: #99CDD8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.edu.esprit.gui.HomeController">
    <children>
-      <Button layoutX="395.0" layoutY="246.0" mnemonicParsing="false" onAction="#ghotel" text="Gestion d'Hotel" />
-      <Button layoutX="103.0" layoutY="246.0" mnemonicParsing="false" onAction="#gvol" text="Gestion de vols" />
-      <ImageView fitHeight="153.0" fitWidth="210.0" layoutX="64.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="619.0" layoutY="405.0" mnemonicParsing="false" onAction="#ghotel" prefHeight="49.0" prefWidth="270.0" text="Gestion d'Hotel" />
+      <Button layoutX="122.0" layoutY="405.0" mnemonicParsing="false" onAction="#gvol" prefHeight="49.0" prefWidth="263.0" text="Gestion de vols" />
+      <ImageView fitHeight="256.0" fitWidth="347.0" layoutX="83.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Flights-small-640x480.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="153.0" fitWidth="227.0" layoutX="343.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="247.0" fitWidth="390.0" layoutX="546.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Hotel-enseigne-neon-630x405-C-Thinkstock.jpg" />
          </image>

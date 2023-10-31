@@ -15,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -213,5 +214,22 @@ public class AffichageVolsController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+     @FXML
+    void imprimervols(ActionEvent event) {
+        
+           PrinterJob printerJob = PrinterJob.createPrinterJob();
+
+            if (printerJob != null && printerJob.showPrintDialog(treeview.getScene().getWindow())) {
+                boolean success = printerJob.printPage(treeview);
+                if (success) {
+                    printerJob.endJob();
+                    System.out.println("Printing completed successfully.");
+                } else {
+                    System.out.println("Printing failed.");
+                }
+            }
+
+    }
     
 }
+  

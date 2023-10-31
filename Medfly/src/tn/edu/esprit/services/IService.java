@@ -5,6 +5,7 @@
  */
 package tn.edu.esprit.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public interface IService <T> {
     public void supprimer(int id);
     public T getOnebyid(int id);
     public List<T> getAll();
-    
+    public ArrayList<T> Advancedsearch(String d, String n, String k);
 }
 
 

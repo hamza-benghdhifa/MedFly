@@ -62,64 +62,92 @@ public class AjoutHotelController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void AjouterHotel(ActionEvent event) {
-       String nom=this.txtNom.getText();
-       String prix=this.txtPrix.getText();
-       String chambre=this.controlChmabre.getText();
-       String pays=this.txtPays.getText();
-       String etoile=this.txtEtoile.getText();
-       
-        int chambre1 = Integer.parseInt(chambre);
-            
-         Float prix1 = null;  
-            try {
-                 prix1 = Float.valueOf(prix);
-                System.out.println("prix: " + prix1);
-            } catch (NumberFormatException e) {
-                System.err.println("Invalid float value format");
-            }
-            
-            if (nom.isEmpty() || prix.isEmpty() || chambre.isEmpty() || pays.isEmpty() || etoile.isEmpty() )
-         {
-        controlRemplissage.setText("Please fill in all fields.");
-        return; // Exit the method to prevent adding an empty record
-         }
-            
-             // Validate the "gradNum" field for digits only
-    if (!isValidGradNum(chambre)) {
-        controlChmabre.setText("chambre number should contain only digits.");
-        return;
+   @FXML
+private void AjouterHotel(ActionEvent event) {
+    String nom = this.txtNom.getText();
+    String prix = this.txtPrix.getText();
+    String chambre = this.txtChambre.getText();
+    String pays = this.txtPays.getText();
+    String etoile = this.txtEtoile.getText();
+
+    if (nom.isEmpty() || prix.isEmpty() || chambre.isEmpty() || pays.isEmpty() || etoile.isEmpty()) {
+        controlRemplissage.setText("Veuillez remplir tous les champs.");
+        return; // Quitter la méthode pour éviter d'ajouter un enregistrement vide
     }
-    if (!isValidGradNum(etoile)) {
-        controlEtoile.setText("etoile number should contain only digits.");
-        return;
-    }
-            // Validate the "prenom" and "name" fields for letters only
-    if (!isValidName(nom) || !isValidName(pays))
-    {
-        controlNom.setText("Name  should contain only letters.");
-        controlPays.setText("Pays  should contain only letters.");
-        
+
+    // Valider que "chambre" est un entier
+    if (!isValidInteger(chambre)) {
+        controlChmabre.setText("Le numéro de chambre doit contenir uniquement des chiffres.");
         return;
     }
 
-            
-            
-          ServiceHotels sh = new ServiceHotels();
-          Hotels h = new Hotels(nom,etoile,pays,chambre1,prix1);
-          sh.ajouter(h);
-          System.out.println("hotel ajoutee avec succes");
-          
-           // Clear the error labels
+    // Valider que "etoile" est une chaîne de chiffres de 1 à 7 caractères max
+    if (!isValidStars(etoile)) {
+        controlEtoile.setText("Le nombre d'étoiles doit contenir entre 1 et 7 chiffres.");
+        return;
+    }
+
+    // Valider que "prix" est un nombre à virgule flottante
+    if (!isValidFloat(prix)) {
+        ControlPrix.setText("Le prix doit être un nombre valide.");
+        return;
+    }
+
+    // Valider que "nom" et "pays" ne contiennent que des lettres
+    if (!isValidLetters(nom) ) {
+        controlNom.setText("Le nom doit contenir uniquement des lettres.");
+        return;
+    }
+    if ( !isValidLetters(pays)){
+                controlPays.setText("Le pays doit contenir uniquement des lettres.");
+                        return;
+
+    }
+
+    // Si toutes les validations sont réussies, ajoutez l'hôtel
+    int chambre1 = Integer.parseInt(chambre);
+    float prix1 = Float.parseFloat(prix);
+
+    ServiceHotels sh = new ServiceHotels();
+    Hotels h = new Hotels(nom, etoile, pays, chambre1, prix1);
+    sh.ajouter(h);
+    ControlAjout.setText("Hôtel ajouté avec succès.");
+
+    // Effacez les champs de saisie et les messages d'erreur
     txtNom.setText("");
     txtPrix.setText("");
     txtChambre.setText("");
     txtPays.setText("");
     txtEtoile.setText("");
-          
-          
+    controlRemplissage.setText("");
+    controlChmabre.setText("");
+    controlEtoile.setText("");
+    ControlPrix.setText("");
+    controlNom.setText("");
+    controlPays.setText("");
+}
+
+private boolean isValidInteger(String input) {
+    return input.matches("^\\d+$");
+}
+
+private boolean isValidStars(String input) {
+    return input.matches("^\\d{1,7}$");
+}
+
+private boolean isValidFloat(String input) {
+    try {
+        Float.parseFloat(input);
+        return true;
+    } catch (NumberFormatException e) {
+        return false;
     }
+}
+
+private boolean isValidLetters(String input) {
+    return input.matches("^[a-zA-Z]+$");
+}
+
           
    @FXML
     private void RetourAjout(ActionEvent event) throws IOException {

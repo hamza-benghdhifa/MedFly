@@ -8,6 +8,7 @@ package tn.edu.esprit.services;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import tn.edu.esprit.entities.UserHotel;
 import tn.edu.esprit.utilities.Myconnection;
@@ -61,5 +62,11 @@ public class ReservationHotel implements IService<UserHotel> {
     public List<UserHotel> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public ArrayList<UserHotel> Advancedsearch(String d, String n, String k) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }
